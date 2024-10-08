@@ -12,7 +12,7 @@ export class Slug {
    *
    * @param text {string}
    */
-  
+
   static createFromText(text: string): Slug {
     const slugText = text
       .normalize('NFKD')
