@@ -56,6 +56,11 @@ export class Question extends Entity<QuestionProps> {
     this.props.updatedAt = new Date()
   }
 
+  set bestAnswerId(bestAnswerId: UniqueEntityID | undefined) {
+    this.props.bestAnswerId = bestAnswerId
+    this.touch()
+  }
+
   set title(title: string) {
     this.props.title = title
     this.props.slug = Slug.createFromText(title)
@@ -64,11 +69,6 @@ export class Question extends Entity<QuestionProps> {
 
   set content(content: string) {
     this.props.content = content
-    this.touch()
-  }
-
-  set bestAnswerId(bestAnswerId: UniqueEntityID | undefined) {
-    this.props.bestAnswerId = bestAnswerId
     this.touch()
   }
 
